@@ -1,0 +1,63 @@
+{
+  "data_seed": 1,
+  "base": "/home/frank/runs/thesis_experiment_runs/Quaterly_rep2Bankstatement_rerun/merged/base_quarterly_8b_seed0",
+  "adapter": "/home/frank/runs/thesis_experiment_runs/Quaterly_rep2Bankstatement_rerun/adapters/stage2/stage2_bank_full_8b_seed0/adapter_last",
+  "selection": {
+    "run": "q2b_seed1",
+    "mode": "top",
+    "statistic": "rho_median",
+    "quantile": 0.75,
+    "threshold": 0.00755746872164309,
+    "n_selected": 63,
+    "n_total": 252,
+    "seed": null
+  },
+  "split": "validation",
+  "cap": 4096,
+  "batch": 16,
+  "0.0": {
+    "beta": 0.0,
+    "n_layers_reverted": 63,
+    "quarterly_f1": 0.3215,
+    "bank_f1": 0.5547,
+    "quarterly_vf1": 0.614,
+    "bank_vf1": 0.8635,
+    "eval_seconds": 2081.9
+  },
+  "0.25": {
+    "beta": 0.25,
+    "n_layers_reverted": 63,
+    "quarterly_f1": 0.2645,
+    "bank_f1": 0.5981,
+    "quarterly_vf1": 0.595,
+    "bank_vf1": 0.8792,
+    "eval_seconds": 1885.7
+  },
+  "0.5": {
+    "beta": 0.5,
+    "n_layers_reverted": 63,
+    "quarterly_f1": 0.1863,
+    "bank_f1": 0.6712,
+    "quarterly_vf1": 0.5949,
+    "bank_vf1": 0.9199,
+    "eval_seconds": 1224.2
+  },
+  "0.75": {
+    "beta": 0.75,
+    "n_layers_reverted": 63,
+    "quarterly_f1": 0.1129,
+    "bank_f1": 0.6316,
+    "quarterly_vf1": 0.6145,
+    "bank_vf1": 0.8448,
+    "eval_seconds": 1560.3
+  },
+  "1.0": {
+    "beta": 1.0,
+    "n_layers_reverted": 0,
+    "quarterly_f1": 0.0761,
+    "bank_f1": 0.6491,
+    "quarterly_vf1": 0.6255,
+    "bank_vf1": 0.8718,
+    "eval_seconds": 2060.7
+  }
+}

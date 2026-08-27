@@ -1,0 +1,32 @@
+{
+  "config": "baseline_rehearsal005__val_rerun",
+  "base": "/home/frank/runs/thesis_experiment_runs/Quaterly_rep2Bankstatement_rerun/merged/base_quarterly_8b_seed0",
+  "adapter": "/home/frank/runs/thesis_experiment_runs/Quaterly_rep2Bankstatement_rerun/adapters/baselines/rehearsal005_8b_seed0/adapter_last",
+  "method": "reversion",
+  "wiseft_coeff": null,
+  "alpha_beta": [
+    1.0,
+    1.0
+  ],
+  "split": "validation",
+  "quarterly": {
+    "field_f1": 0.3737,
+    "value_f1": 0.6851,
+    "n": 36,
+    "eval_seconds": 387.3,
+    "seconds_per_doc": 10.76,
+    "prompt": "Extract all fields from this document as JSON."
+  },
+  "bank": {
+    "field_f1": 0.6604,
+    "value_f1": 0.8958,
+    "n": 74,
+    "eval_seconds": 1399.3,
+    "seconds_per_doc": 18.91,
+    "prompt": "Extract all fields from this document as JSON."
+  },
+  "quarterly_f1": 0.3737,
+  "bank_f1": 0.6604,
+  "avg_f1": 0.5171,
+  "total_eval_seconds": 1819.1
+}

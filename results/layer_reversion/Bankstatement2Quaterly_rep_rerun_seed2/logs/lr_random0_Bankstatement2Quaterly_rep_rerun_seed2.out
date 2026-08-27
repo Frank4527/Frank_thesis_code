@@ -1,0 +1,19 @@
+layer sweep: random 63/252 layers (rho_median q=0.75), betas=[0.0, 0.25, 0.5, 0.75, 1.0], cap=4096
+Loading weights:   0%|          | 0/750 [00:00<?, ?it/s]Loading weights:  38%|███▊      | 283/750 [00:00<00:00, 2811.94it/s]Loading weights:  75%|███████▌  | 565/750 [00:00<00:00, 2629.90it/s]Loading weights: 100%|██████████| 750/750 [00:00<00:00, 2658.03it/s]
+adapter: 252 DoRA layers, r=16, alpha=32, scaling=2.0000; W0 snapshot 13.9 GB (CPU)
+  beta=0.0: reverted 63 layers, scoring bank_full
+  beta=0.0: scoring quarterly
+  beta=0.0: bank=0.2634 quarterly=0.2644
+  beta=0.25: reverted 63 layers, scoring bank_full
+  beta=0.25: scoring quarterly
+  beta=0.25: bank=0.2732 quarterly=0.2638
+  beta=0.5: reverted 63 layers, scoring bank_full
+  beta=0.5: scoring quarterly
+  beta=0.5: bank=0.1949 quarterly=0.2854
+  beta=0.75: reverted 63 layers, scoring bank_full
+  beta=0.75: scoring quarterly
+  beta=0.75: bank=0.0925 quarterly=0.2842
+  beta=1.0: reverted 0 layers, scoring bank_full
+  beta=1.0: scoring quarterly
+  beta=1.0: bank=0.0481 quarterly=0.2850
+layer sweep done in 13910s -> /home/frank/runs/thesis_experiment_runs/_layer_reversion/Bankstatement2Quaterly_rep_rerun_seed2/layer-random0-dirsweep__both__val.json

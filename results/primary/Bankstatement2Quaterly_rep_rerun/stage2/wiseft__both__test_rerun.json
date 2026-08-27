@@ -1,0 +1,29 @@
+{
+  "config": "wiseft_selected",
+  "base": "/home/frank/runs/thesis_experiment_runs/Bankstatement2Quaterly_rep_rerun/merged/base_bank_full_8b_seed0",
+  "adapter": "/home/frank/runs/thesis_experiment_runs/Bankstatement2Quaterly_rep_rerun/adapters/stage2/stage2_quarterly_8b_seed0/adapter_last",
+  "method": "wiseft",
+  "wiseft_coeff": 0.75,
+  "alpha_beta": null,
+  "split": "test",
+  "bank": {
+    "field_f1": 0.4498,
+    "value_f1": 0.7114,
+    "n": 75,
+    "eval_seconds": 1186.5,
+    "seconds_per_doc": 15.82,
+    "prompt": "Extract all fields from this document as JSON."
+  },
+  "quarterly": {
+    "field_f1": 0.513,
+    "value_f1": 0.6889,
+    "n": 34,
+    "eval_seconds": 111.1,
+    "seconds_per_doc": 3.27,
+    "prompt": "Extract all fields from this document as JSON."
+  },
+  "bank_f1": 0.4498,
+  "quarterly_f1": 0.513,
+  "avg_f1": 0.4814,
+  "total_eval_seconds": 1331.7
+}

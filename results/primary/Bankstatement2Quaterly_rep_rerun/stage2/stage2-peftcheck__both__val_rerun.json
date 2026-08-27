@@ -1,0 +1,27 @@
+{
+  "config": "stage2_peft_loader",
+  "loader": "peft",
+  "base": "/home/frank/runs/thesis_experiment_runs/Bankstatement2Quaterly_rep_rerun/merged/base_bank_full_8b_seed0",
+  "adapter": "/home/frank/runs/thesis_experiment_runs/Bankstatement2Quaterly_rep_rerun/adapters/stage2/stage2_quarterly_8b_seed0/adapter_last",
+  "split": "validation",
+  "bank": {
+    "field_f1": 0.0057,
+    "value_f1": 0.115,
+    "n": 74,
+    "eval_seconds": 12422.5,
+    "seconds_per_doc": 167.87,
+    "prompt": "Extract all fields from this document as JSON."
+  },
+  "quarterly": {
+    "field_f1": 0.4739,
+    "value_f1": 0.6228,
+    "n": 36,
+    "eval_seconds": 4692.0,
+    "seconds_per_doc": 130.33,
+    "prompt": "Extract all fields from this document as JSON."
+  },
+  "bank_f1": 0.0057,
+  "quarterly_f1": 0.4739,
+  "avg_f1": 0.2398,
+  "total_eval_seconds": 17126.9
+}

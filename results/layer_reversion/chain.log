@@ -1,0 +1,27 @@
+=== [2026-08-15T13:42:17+00:00] Bankstatement2Quaterly_rep_rerun   drift=b2q_seed1  seed=1  old=bank_full new=quarterly
+b2q_seed1: top 63/252 layers at rho_median quantile 0.75 (threshold 0.007193) -> /home/frank/runs/thesis_experiment_runs/_layer_reversion/Bankstatement2Quaterly_rep_rerun/selected_layers_top_q0.75.json
+[2026-08-15T13:42:17+00:00] LAUNCH lr_top_Bankstatement2Quaterly_rep_rerun on GPU0
+=== [2026-08-15T13:42:20+00:00] Bankstatement2Quaterly_rep_rerun_seed2   drift=b2q_seed2  seed=2  old=bank_full new=quarterly
+b2q_seed2: top 63/252 layers at rho_median quantile 0.75 (threshold 0.007112) -> /home/frank/runs/thesis_experiment_runs/_layer_reversion/Bankstatement2Quaterly_rep_rerun_seed2/selected_layers_top_q0.75.json
+[2026-08-15T13:42:21+00:00] LAUNCH lr_top_Bankstatement2Quaterly_rep_rerun_seed2 on GPU1
+=== [2026-08-15T13:42:24+00:00] Bankstatement2Quaterly_rep_rerun_seed3   drift=b2q_seed3  seed=3  old=bank_full new=quarterly
+b2q_seed3: top 63/252 layers at rho_median quantile 0.75 (threshold 0.007257) -> /home/frank/runs/thesis_experiment_runs/_layer_reversion/Bankstatement2Quaterly_rep_rerun_seed3/selected_layers_top_q0.75.json
+[2026-08-15T13:42:24+00:00] LAUNCH lr_top_Bankstatement2Quaterly_rep_rerun_seed3 on GPU2
+=== [2026-08-15T13:42:27+00:00] Quaterly_rep2Bankstatement_rerun   drift=q2b_seed1  seed=1  old=quarterly new=bank_full
+q2b_seed1: top 63/252 layers at rho_median quantile 0.75 (threshold 0.007557) -> /home/frank/runs/thesis_experiment_runs/_layer_reversion/Quaterly_rep2Bankstatement_rerun/selected_layers_top_q0.75.json
+[2026-08-15T13:42:27+00:00] LAUNCH lr_top_Quaterly_rep2Bankstatement_rerun on GPU3
+=== [2026-08-15T13:42:30+00:00] Quaterly_rep2Bankstatement_rerun_seed2   drift=q2b_seed2  seed=2  old=quarterly new=bank_full
+q2b_seed2: top 63/252 layers at rho_median quantile 0.75 (threshold 0.007586) -> /home/frank/runs/thesis_experiment_runs/_layer_reversion/Quaterly_rep2Bankstatement_rerun_seed2/selected_layers_top_q0.75.json
+  lr_top_Bankstatement2Quaterly_rep_rerun_seed3: 2:03:05 (ok)
+[2026-08-15T15:45:32+00:00] LAUNCH lr_top_Quaterly_rep2Bankstatement_rerun_seed2 on GPU2
+=== [2026-08-15T15:45:35+00:00] Quaterly_rep2Bankstatement_rerun_seed3   drift=q2b_seed3  seed=3  old=quarterly new=bank_full
+q2b_seed3: top 63/252 layers at rho_median quantile 0.75 (threshold 0.007735) -> /home/frank/runs/thesis_experiment_runs/_layer_reversion/Quaterly_rep2Bankstatement_rerun_seed3/selected_layers_top_q0.75.json
+  lr_top_Bankstatement2Quaterly_rep_rerun: 2:26:44 (ok)
+[2026-08-15T16:09:15+00:00] LAUNCH lr_top_Quaterly_rep2Bankstatement_rerun_seed3 on GPU0
+[2026-08-15T16:09:18+00:00] waiting for all eval slots to drain...
+  lr_top_Quaterly_rep2Bankstatement_rerun: 2:28:37 (ok)
+  lr_top_Bankstatement2Quaterly_rep_rerun_seed2: 3:03:19 (ok)
+  lr_top_Quaterly_rep2Bankstatement_rerun_seed2: 3:20:18 (ok)
+  lr_top_Quaterly_rep2Bankstatement_rerun_seed3: 3:50:01 (ok)
+[2026-08-15T19:59:17+00:00] pool empty
+LAYER REVERSION DONE 2026-08-15T19:59:17+00:00

@@ -1,0 +1,456 @@
+{
+  "run": "b2q_seed1",
+  "statistic": "rho_median",
+  "quantile": 0.75,
+  "mode": "top",
+  "seed": null,
+  "threshold": 0.007192597957327962,
+  "n_selected": 63,
+  "n_total": 252,
+  "source": "/home/frank/runs/thesis_experiment_runs/_layerdrift/layer_drift_b2q_seed1.json",
+  "layers": [
+    "model.language_model.layers.1.mlp.gate_proj",
+    "model.language_model.layers.1.mlp.up_proj",
+    "model.language_model.layers.12.mlp.gate_proj",
+    "model.language_model.layers.13.mlp.gate_proj",
+    "model.language_model.layers.15.mlp.gate_proj",
+    "model.language_model.layers.16.mlp.gate_proj",
+    "model.language_model.layers.16.self_attn.q_proj",
+    "model.language_model.layers.17.self_attn.k_proj",
+    "model.language_model.layers.17.self_attn.q_proj",
+    "model.language_model.layers.18.mlp.gate_proj",
+    "model.language_model.layers.18.self_attn.k_proj",
+    "model.language_model.layers.18.self_attn.q_proj",
+    "model.language_model.layers.19.mlp.gate_proj",
+    "model.language_model.layers.2.mlp.gate_proj",
+    "model.language_model.layers.2.mlp.up_proj",
+    "model.language_model.layers.20.mlp.gate_proj",
+    "model.language_model.layers.20.self_attn.k_proj",
+    "model.language_model.layers.20.self_attn.q_proj",
+    "model.language_model.layers.22.self_attn.k_proj",
+    "model.language_model.layers.23.mlp.gate_proj",
+    "model.language_model.layers.23.self_attn.q_proj",
+    "model.language_model.layers.24.self_attn.q_proj",
+    "model.language_model.layers.26.self_attn.k_proj",
+    "model.language_model.layers.26.self_attn.o_proj",
+    "model.language_model.layers.26.self_attn.q_proj",
+    "model.language_model.layers.27.self_attn.k_proj",
+    "model.language_model.layers.27.self_attn.q_proj",
+    "model.language_model.layers.28.mlp.gate_proj",
+    "model.language_model.layers.28.self_attn.k_proj",
+    "model.language_model.layers.28.self_attn.q_proj",
+    "model.language_model.layers.29.mlp.gate_proj",
+    "model.language_model.layers.29.self_attn.k_proj",
+    "model.language_model.layers.29.self_attn.o_proj",
+    "model.language_model.layers.29.self_attn.q_proj",
+    "model.language_model.layers.3.mlp.gate_proj",
+    "model.language_model.layers.3.mlp.up_proj",
+    "model.language_model.layers.30.mlp.gate_proj",
+    "model.language_model.layers.30.mlp.up_proj",
+    "model.language_model.layers.30.self_attn.q_proj",
+    "model.language_model.layers.31.mlp.gate_proj",
+    "model.language_model.layers.31.self_attn.k_proj",
+    "model.language_model.layers.31.self_attn.o_proj",
+    "model.language_model.layers.31.self_attn.q_proj",
+    "model.language_model.layers.32.mlp.gate_proj",
+    "model.language_model.layers.32.mlp.up_proj",
+    "model.language_model.layers.32.self_attn.k_proj",
+    "model.language_model.layers.32.self_attn.o_proj",
+    "model.language_model.layers.32.self_attn.q_proj",
+    "model.language_model.layers.33.mlp.gate_proj",
+    "model.language_model.layers.33.mlp.up_proj",
+    "model.language_model.layers.33.self_attn.k_proj",
+    "model.language_model.layers.33.self_attn.o_proj",
+    "model.language_model.layers.33.self_attn.q_proj",
+    "model.language_model.layers.33.self_attn.v_proj",
+    "model.language_model.layers.34.mlp.gate_proj",
+    "model.language_model.layers.34.mlp.up_proj",
+    "model.language_model.layers.34.self_attn.k_proj",
+    "model.language_model.layers.34.self_attn.q_proj",
+    "model.language_model.layers.35.mlp.gate_proj",
+    "model.language_model.layers.35.mlp.up_proj",
+    "model.language_model.layers.35.self_attn.k_proj",
+    "model.language_model.layers.35.self_attn.q_proj",
+    "model.language_model.layers.4.mlp.gate_proj"
+  ],
+  "detail": [
+    {
+      "layer": "model.language_model.layers.2.mlp.up_proj",
+      "rho_median": 0.052940502762794495,
+      "block": 2,
+      "proj": "up_proj"
+    },
+    {
+      "layer": "model.language_model.layers.1.mlp.up_proj",
+      "rho_median": 0.03609121963381767,
+      "block": 1,
+      "proj": "up_proj"
+    },
+    {
+      "layer": "model.language_model.layers.2.mlp.gate_proj",
+      "rho_median": 0.030785268172621727,
+      "block": 2,
+      "proj": "gate_proj"
+    },
+    {
+      "layer": "model.language_model.layers.3.mlp.gate_proj",
+      "rho_median": 0.023553241044282913,
+      "block": 3,
+      "proj": "gate_proj"
+    },
+    {
+      "layer": "model.language_model.layers.1.mlp.gate_proj",
+      "rho_median": 0.015825141221284866,
+      "block": 1,
+      "proj": "gate_proj"
+    },
+    {
+      "layer": "model.language_model.layers.34.mlp.gate_proj",
+      "rho_median": 0.013988520950078964,
+      "block": 34,
+      "proj": "gate_proj"
+    },
+    {
+      "layer": "model.language_model.layers.33.mlp.gate_proj",
+      "rho_median": 0.012304053641855717,
+      "block": 33,
+      "proj": "gate_proj"
+    },
+    {
+      "layer": "model.language_model.layers.3.mlp.up_proj",
+      "rho_median": 0.011746533215045929,
+      "block": 3,
+      "proj": "up_proj"
+    },
+    {
+      "layer": "model.language_model.layers.33.self_attn.k_proj",
+      "rho_median": 0.011168897151947021,
+      "block": 33,
+      "proj": "k_proj"
+    },
+    {
+      "layer": "model.language_model.layers.32.mlp.gate_proj",
+      "rho_median": 0.011067206040024757,
+      "block": 32,
+      "proj": "gate_proj"
+    },
+    {
+      "layer": "model.language_model.layers.26.self_attn.q_proj",
+      "rho_median": 0.01106168795377016,
+      "block": 26,
+      "proj": "q_proj"
+    },
+    {
+      "layer": "model.language_model.layers.34.mlp.up_proj",
+      "rho_median": 0.010693192481994629,
+      "block": 34,
+      "proj": "up_proj"
+    },
+    {
+      "layer": "model.language_model.layers.29.self_attn.q_proj",
+      "rho_median": 0.010582517832517624,
+      "block": 29,
+      "proj": "q_proj"
+    },
+    {
+      "layer": "model.language_model.layers.33.self_attn.q_proj",
+      "rho_median": 0.010060775093734264,
+      "block": 33,
+      "proj": "q_proj"
+    },
+    {
+      "layer": "model.language_model.layers.35.mlp.gate_proj",
+      "rho_median": 0.009981525130569935,
+      "block": 35,
+      "proj": "gate_proj"
+    },
+    {
+      "layer": "model.language_model.layers.31.self_attn.q_proj",
+      "rho_median": 0.009643206372857094,
+      "block": 31,
+      "proj": "q_proj"
+    },
+    {
+      "layer": "model.language_model.layers.4.mlp.gate_proj",
+      "rho_median": 0.009540649130940437,
+      "block": 4,
+      "proj": "gate_proj"
+    },
+    {
+      "layer": "model.language_model.layers.27.self_attn.q_proj",
+      "rho_median": 0.009212559089064598,
+      "block": 27,
+      "proj": "q_proj"
+    },
+    {
+      "layer": "model.language_model.layers.31.mlp.gate_proj",
+      "rho_median": 0.00907190889120102,
+      "block": 31,
+      "proj": "gate_proj"
+    },
+    {
+      "layer": "model.language_model.layers.35.mlp.up_proj",
+      "rho_median": 0.008913114666938782,
+      "block": 35,
+      "proj": "up_proj"
+    },
+    {
+      "layer": "model.language_model.layers.31.self_attn.k_proj",
+      "rho_median": 0.008871741592884064,
+      "block": 31,
+      "proj": "k_proj"
+    },
+    {
+      "layer": "model.language_model.layers.30.mlp.gate_proj",
+      "rho_median": 0.008833721280097961,
+      "block": 30,
+      "proj": "gate_proj"
+    },
+    {
+      "layer": "model.language_model.layers.26.self_attn.k_proj",
+      "rho_median": 0.008530087769031525,
+      "block": 26,
+      "proj": "k_proj"
+    },
+    {
+      "layer": "model.language_model.layers.20.mlp.gate_proj",
+      "rho_median": 0.008398912847042084,
+      "block": 20,
+      "proj": "gate_proj"
+    },
+    {
+      "layer": "model.language_model.layers.29.self_attn.o_proj",
+      "rho_median": 0.008366557769477367,
+      "block": 29,
+      "proj": "o_proj"
+    },
+    {
+      "layer": "model.language_model.layers.35.self_attn.q_proj",
+      "rho_median": 0.008334796875715256,
+      "block": 35,
+      "proj": "q_proj"
+    },
+    {
+      "layer": "model.language_model.layers.32.self_attn.o_proj",
+      "rho_median": 0.008314808830618858,
+      "block": 32,
+      "proj": "o_proj"
+    },
+    {
+      "layer": "model.language_model.layers.33.mlp.up_proj",
+      "rho_median": 0.008185720071196556,
+      "block": 33,
+      "proj": "up_proj"
+    },
+    {
+      "layer": "model.language_model.layers.30.mlp.up_proj",
+      "rho_median": 0.008169308304786682,
+      "block": 30,
+      "proj": "up_proj"
+    },
+    {
+      "layer": "model.language_model.layers.29.mlp.gate_proj",
+      "rho_median": 0.008147787302732468,
+      "block": 29,
+      "proj": "gate_proj"
+    },
+    {
+      "layer": "model.language_model.layers.18.mlp.gate_proj",
+      "rho_median": 0.008145228028297424,
+      "block": 18,
+      "proj": "gate_proj"
+    },
+    {
+      "layer": "model.language_model.layers.28.mlp.gate_proj",
+      "rho_median": 0.008138643577694893,
+      "block": 28,
+      "proj": "gate_proj"
+    },
+    {
+      "layer": "model.language_model.layers.27.self_attn.k_proj",
+      "rho_median": 0.00805087760090828,
+      "block": 27,
+      "proj": "k_proj"
+    },
+    {
+      "layer": "model.language_model.layers.18.self_attn.q_proj",
+      "rho_median": 0.007856301963329315,
+      "block": 18,
+      "proj": "q_proj"
+    },
+    {
+      "layer": "model.language_model.layers.30.self_attn.q_proj",
+      "rho_median": 0.007838808000087738,
+      "block": 30,
+      "proj": "q_proj"
+    },
+    {
+      "layer": "model.language_model.layers.34.self_attn.q_proj",
+      "rho_median": 0.00782826915383339,
+      "block": 34,
+      "proj": "q_proj"
+    },
+    {
+      "layer": "model.language_model.layers.22.self_attn.k_proj",
+      "rho_median": 0.007819349877536297,
+      "block": 22,
+      "proj": "k_proj"
+    },
+    {
+      "layer": "model.language_model.layers.29.self_attn.k_proj",
+      "rho_median": 0.007812140509486198,
+      "block": 29,
+      "proj": "k_proj"
+    },
+    {
+      "layer": "model.language_model.layers.24.self_attn.q_proj",
+      "rho_median": 0.007778480648994446,
+      "block": 24,
+      "proj": "q_proj"
+    },
+    {
+      "layer": "model.language_model.layers.19.mlp.gate_proj",
+      "rho_median": 0.007753812707960606,
+      "block": 19,
+      "proj": "gate_proj"
+    },
+    {
+      "layer": "model.language_model.layers.13.mlp.gate_proj",
+      "rho_median": 0.007658826187252998,
+      "block": 13,
+      "proj": "gate_proj"
+    },
+    {
+      "layer": "model.language_model.layers.20.self_attn.q_proj",
+      "rho_median": 0.007643536664545536,
+      "block": 20,
+      "proj": "q_proj"
+    },
+    {
+      "layer": "model.language_model.layers.23.mlp.gate_proj",
+      "rho_median": 0.007634554989635944,
+      "block": 23,
+      "proj": "gate_proj"
+    },
+    {
+      "layer": "model.language_model.layers.32.mlp.up_proj",
+      "rho_median": 0.007633235305547714,
+      "block": 32,
+      "proj": "up_proj"
+    },
+    {
+      "layer": "model.language_model.layers.33.self_attn.o_proj",
+      "rho_median": 0.007628248073160648,
+      "block": 33,
+      "proj": "o_proj"
+    },
+    {
+      "layer": "model.language_model.layers.16.mlp.gate_proj",
+      "rho_median": 0.0076087722554802895,
+      "block": 16,
+      "proj": "gate_proj"
+    },
+    {
+      "layer": "model.language_model.layers.16.self_attn.q_proj",
+      "rho_median": 0.007593024987727404,
+      "block": 16,
+      "proj": "q_proj"
+    },
+    {
+      "layer": "model.language_model.layers.33.self_attn.v_proj",
+      "rho_median": 0.00756250973790884,
+      "block": 33,
+      "proj": "v_proj"
+    },
+    {
+      "layer": "model.language_model.layers.28.self_attn.q_proj",
+      "rho_median": 0.007557534612715244,
+      "block": 28,
+      "proj": "q_proj"
+    },
+    {
+      "layer": "model.language_model.layers.23.self_attn.q_proj",
+      "rho_median": 0.007544228807091713,
+      "block": 23,
+      "proj": "q_proj"
+    },
+    {
+      "layer": "model.language_model.layers.31.self_attn.o_proj",
+      "rho_median": 0.0075104860588908195,
+      "block": 31,
+      "proj": "o_proj"
+    },
+    {
+      "layer": "model.language_model.layers.17.self_attn.k_proj",
+      "rho_median": 0.007460531312972307,
+      "block": 17,
+      "proj": "k_proj"
+    },
+    {
+      "layer": "model.language_model.layers.32.self_attn.q_proj",
+      "rho_median": 0.007448967546224594,
+      "block": 32,
+      "proj": "q_proj"
+    },
+    {
+      "layer": "model.language_model.layers.28.self_attn.k_proj",
+      "rho_median": 0.0074119227938354015,
+      "block": 28,
+      "proj": "k_proj"
+    },
+    {
+      "layer": "model.language_model.layers.32.self_attn.k_proj",
+      "rho_median": 0.007354459725320339,
+      "block": 32,
+      "proj": "k_proj"
+    },
+    {
+      "layer": "model.language_model.layers.35.self_attn.k_proj",
+      "rho_median": 0.007346851751208305,
+      "block": 35,
+      "proj": "k_proj"
+    },
+    {
+      "layer": "model.language_model.layers.20.self_attn.k_proj",
+      "rho_median": 0.007343431003391743,
+      "block": 20,
+      "proj": "k_proj"
+    },
+    {
+      "layer": "model.language_model.layers.18.self_attn.k_proj",
+      "rho_median": 0.007314509246498346,
+      "block": 18,
+      "proj": "k_proj"
+    },
+    {
+      "layer": "model.language_model.layers.17.self_attn.q_proj",
+      "rho_median": 0.007305048871785402,
+      "block": 17,
+      "proj": "q_proj"
+    },
+    {
+      "layer": "model.language_model.layers.12.mlp.gate_proj",
+      "rho_median": 0.007273890543729067,
+      "block": 12,
+      "proj": "gate_proj"
+    },
+    {
+      "layer": "model.language_model.layers.15.mlp.gate_proj",
+      "rho_median": 0.0072396062314510345,
+      "block": 15,
+      "proj": "gate_proj"
+    },
+    {
+      "layer": "model.language_model.layers.26.self_attn.o_proj",
+      "rho_median": 0.00722851837053895,
+      "block": 26,
+      "proj": "o_proj"
+    },
+    {
+      "layer": "model.language_model.layers.34.self_attn.k_proj",
+      "rho_median": 0.007222888059914112,
+      "block": 34,
+      "proj": "k_proj"
+    }
+  ]
+}

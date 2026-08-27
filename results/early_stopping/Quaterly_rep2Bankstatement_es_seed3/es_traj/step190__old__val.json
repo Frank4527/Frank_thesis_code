@@ -1,0 +1,26 @@
+{
+  "data_seed": 3,
+  "config": "es_old_Quaterly_rep2Bankstatement_es_seed3_190",
+  "base": "/home/frank/runs/thesis_experiment_runs/Quaterly_rep2Bankstatement_rerun_seed3/merged/base_quarterly_8b_seed0",
+  "adapter": "/home/frank/runs/thesis_experiment_runs/Quaterly_rep2Bankstatement_es_seed3/adapters/stage2/stage2_bank_full_8b_seed0/hf/checkpoint-190",
+  "method": "reversion",
+  "wiseft_coeff": null,
+  "alpha_beta": [
+    1.0,
+    1.0
+  ],
+  "split": "validation",
+  "quarterly": {
+    "field_f1": 0.0629,
+    "value_f1": 0.5042,
+    "n": 26,
+    "eval_seconds": 174.7,
+    "seconds_per_doc": 6.72,
+    "prompt": "Extract all fields from this document as JSON."
+  },
+  "bank": null,
+  "quarterly_f1": 0.0629,
+  "bank_f1": null,
+  "avg_f1": null,
+  "total_eval_seconds": 207.7
+}

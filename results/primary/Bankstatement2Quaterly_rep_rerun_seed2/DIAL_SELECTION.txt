@@ -1,0 +1,23 @@
+selecting dials for Bankstatement2Quaterly_rep_rerun_seed2
+  magnitude (MAG_A):
+    0.0   bank_f1=0.0665 quarterly_f1=0.2859 mean=0.1762 <-- selected
+    0.25  bank_f1=0.0658 quarterly_f1=0.2836 mean=0.1747  (near-tie)
+    0.5   bank_f1=0.0502 quarterly_f1=0.2846 mean=0.1674
+    0.75  bank_f1=0.0554 quarterly_f1=0.2851 mean=0.1703
+    1.0   bank_f1=0.0481 quarterly_f1=0.2850 mean=0.1665
+    NOTE: argmax is 0.0 -- full reversion to the stage-1 anchor is best
+  direction (DIR_B):
+    0.0   bank_f1=0.7158 quarterly_f1=0.0000 mean=0.3579
+    0.25  bank_f1=0.6886 quarterly_f1=0.0517 mean=0.3701 <-- selected
+    0.5   bank_f1=0.5210 quarterly_f1=0.1974 mean=0.3592
+    0.75  bank_f1=0.2731 quarterly_f1=0.2642 mean=0.2686
+    1.0   bank_f1=0.0481 quarterly_f1=0.2850 mean=0.1665
+  wiseft (WISEFT_C):
+    0.0   bank_f1=0.7415 quarterly_f1=0.0000 mean=0.3708 <-- selected
+    0.25  bank_f1=0.6842 quarterly_f1=0.0377 mean=0.3609
+    0.5   bank_f1=0.5392 quarterly_f1=0.1498 mean=0.3445
+    0.75  bank_f1=0.2500 quarterly_f1=0.2407 mean=0.2454
+    1.0   bank_f1=0.0481 quarterly_f1=0.2850 mean=0.1665
+    NOTE: argmax is 0.0 -- full reversion to the stage-1 anchor is best
+
+MAG_A=0.0 DIR_B=0.25 WISEFT_C=0.0

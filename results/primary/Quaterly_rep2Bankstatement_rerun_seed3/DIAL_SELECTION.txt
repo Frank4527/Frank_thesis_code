@@ -1,0 +1,21 @@
+selecting dials for Quaterly_rep2Bankstatement_rerun_seed3
+  magnitude (MAG_A):
+    0.0   bank_f1=0.6582 quarterly_f1=0.0162 mean=0.3372  (near-tie)
+    0.25  bank_f1=0.6641 quarterly_f1=0.0101 mean=0.3371  (near-tie)
+    0.5   bank_f1=0.6720 quarterly_f1=0.0098 mean=0.3409 <-- selected
+    0.75  bank_f1=0.6444 quarterly_f1=0.0103 mean=0.3273
+    1.0   bank_f1=0.6391 quarterly_f1=0.0100 mean=0.3246
+  direction (DIR_B):
+    0.0   bank_f1=0.0017 quarterly_f1=0.4865 mean=0.2441
+    0.25  bank_f1=0.3176 quarterly_f1=0.4796 mean=0.3986
+    0.5   bank_f1=0.5983 quarterly_f1=0.4195 mean=0.5089 <-- selected
+    0.75  bank_f1=0.6419 quarterly_f1=0.1431 mean=0.3925
+    1.0   bank_f1=0.6391 quarterly_f1=0.0100 mean=0.3246
+  wiseft (WISEFT_C):
+    0.0   bank_f1=0.0018 quarterly_f1=0.5301 mean=0.2660
+    0.25  bank_f1=0.2479 quarterly_f1=0.4754 mean=0.3617
+    0.5   bank_f1=0.5817 quarterly_f1=0.4571 mean=0.5194 <-- selected
+    0.75  bank_f1=0.6383 quarterly_f1=0.2075 mean=0.4229
+    1.0   bank_f1=0.6391 quarterly_f1=0.0100 mean=0.3246
+
+MAG_A=0.5 DIR_B=0.5 WISEFT_C=0.5

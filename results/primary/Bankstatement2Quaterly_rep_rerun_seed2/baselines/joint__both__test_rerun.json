@@ -1,0 +1,33 @@
+{
+  "data_seed": 2,
+  "config": "baseline_joint__test_rerun",
+  "base": "/home/frank/models/Qwen3-VL-8B-Instruct",
+  "adapter": "/home/frank/runs/thesis_experiment_runs/Bankstatement2Quaterly_rep_rerun_seed2/adapters/baselines/joint_8b_seed0/adapter_last",
+  "method": "reversion",
+  "wiseft_coeff": null,
+  "alpha_beta": [
+    1.0,
+    1.0
+  ],
+  "split": "test",
+  "bank": {
+    "field_f1": 0.7047,
+    "value_f1": 0.9,
+    "n": 75,
+    "eval_seconds": 2174.3,
+    "seconds_per_doc": 28.99,
+    "prompt": "Extract all fields from this document as JSON."
+  },
+  "quarterly": {
+    "field_f1": 0.5724,
+    "value_f1": 0.7453,
+    "n": 83,
+    "eval_seconds": 291.5,
+    "seconds_per_doc": 3.51,
+    "prompt": "Extract all fields from this document as JSON."
+  },
+  "bank_f1": 0.7047,
+  "quarterly_f1": 0.5724,
+  "avg_f1": 0.6385,
+  "total_eval_seconds": 2506.7
+}

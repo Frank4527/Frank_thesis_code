@@ -1,0 +1,80 @@
+# Provenance
+
+Generated 2026-08-27 from the working tree on the Evolution AI
+GPU host. Every file in this package is a copy; nothing in the working tree was moved,
+renamed or deleted, so `/home/frank/code` and `/home/frank/runs/thesis_experiment_runs`
+remain the record of what actually ran.
+
+Working-tree code revision: `b07fdcd`
+
+## Scripts: original name → package name
+
+| in this package | original path (under `/home/frank/`) | what it does | copy check |
+|---|---|---|---|
+| `scripts/10_config_b2q_example.sh` | `runs/thesis_experiment_runs/Bankstatement2Quaterly_rep_rerun/scripts/config.sh` | per-run configuration; one copy exists per run, this is split 1's | identical |
+| `scripts/11_run_all_b2q.sh` | `runs/thesis_experiment_runs/Bankstatement2Quaterly_rep_rerun/scripts/run_all.sh` | builds the rehearsal/joint mixtures, trains stage 1, merges it, trains stage 2 and the baselines | identical |
+| `scripts/12_run_evals_b2q.sh` | `runs/thesis_experiment_runs/Bankstatement2Quaterly_rep_rerun/scripts/run_evals.sh` | every evaluation for a b2q run: anchors, the three sweeps, the baselines, then the test set | identical |
+| `scripts/13_run_all_q2b.sh` | `runs/thesis_experiment_runs/Quaterly_rep2Bankstatement_rerun/scripts/run_all.sh` | as above for q2b. Differs in one respect: it does NOT retrain the joint baseline | identical |
+| `scripts/14_run_evals_q2b.sh` | `runs/thesis_experiment_runs/Quaterly_rep2Bankstatement_rerun/scripts/run_evals.sh` | as above for q2b | identical |
+| `scripts/20_earlystop_train.sh` | `runs/thesis_experiment_runs/_es_train_chain.sh` | retrains stage 2 on every run with a checkpoint every 10 optimiser steps | identical |
+| `scripts/21_earlystop_trajectory.sh` | `runs/thesis_experiment_runs/_es_traj_chain.sh` | scores each checkpoint on both tasks and applies the patience-3 rule | identical |
+| `scripts/22_earlystop_reversion_sweep.sh` | `runs/thesis_experiment_runs/_es_sweep_chain.sh` | applies the direction sweep to the selected early-stopped checkpoint | identical |
+| `scripts/30_layer_reversion_top25.sh` | `runs/thesis_experiment_runs/_layer_reversion_chain.sh` | reverts the 63 highest-drift layers across the five dials | identical |
+| `scripts/31_layer_reversion_random25.sh` | `runs/thesis_experiment_runs/_layer_reversion_random_chain.sh` | the random control: 63 layers drawn at random, seed 0 | identical |
+| `scripts/32_layer_reversion_bottom25.sh` | `runs/thesis_experiment_runs/_layer_reversion_bottom_chain.sh` | the bottom control: the 63 lowest-drift layers | identical |
+
+## Results: which script produced which directory
+
+| directory | produced by |
+|---|---|
+| `results/primary/<run>/stage1`, `stage2`, `baselines` | `11`–`14` |
+| `results/primary/<run>/DIAL_SELECTION.txt` | `code/Thesis_Experiment/data_prep/select_dials.py`, from that run's own validation sweeps |
+| `results/early_stopping/<run>/es_traj` | `20` then `21` |
+| `results/early_stopping/<run>/es_reversion` | `22` |
+| `results/layer_reversion/<run>/layer-top-*` | `30` |
+| `results/layer_reversion/<run>/layer-random0-*` | `31` |
+| `results/layer_reversion/<run>/layer-bottom-*` | `32` |
+| `results/layer_drift/*.json` | `code/Identification_and_Reversion/layer_drift.py` |
+
+## Known provenance gaps
+
+**Split 1 predates the stamping.** `Bankstatement2Quaterly_rep_rerun` and
+`Quaterly_rep2Bankstatement_rerun` were run before `data_seed` was recorded into each
+result JSON and before the manifest-access audit existed, so their result files carry
+`data_seed: null` and there is no `manifest_access.tsv` for them. The splits were
+verified retrospectively by size: quarterly validation 36 / test 34 is unique to split
+1, and the bank counts match. Splits 2 and 3 carry the stamp.
+
+**Two split-1 sweep files were regenerated on 2026-08-16.**
+`stage2-dirsweep__both__val_rerun.json` and `stage2-magsweep__both__val_rerun.json` for
+`Bankstatement2Quaterly_rep_rerun` were originally produced on 2026-08-04, before
+`apply_reversion` learned to dispatch dial 1 to the canonical full-DoRA path, so their
+β=1 / α=1 rows carried bf16 renormalisation noise. Both were re-run with the current
+code. The eight unaffected dials reproduced bit-identically and only the dial-1 row
+moved, to the value the canonical stage-2 evaluation already reported. The originals
+are preserved on the server under
+`Bankstatement2Quaterly_rep_rerun/PROVENANCE/pre_dial1_fix_20260816/`.
+
+**`stage2-peftcheck` exists for split 1 only.** It is a cross-check of the weight
+reconstruction against PEFT's own `PeftModel`, not a result, and was run once. On that
+run the two differ by 0.0046 field-F1 on the newly learned task and 0.0187 on the
+forgotten one, where both models score near zero and exact-match F1 is unstable. Every
+comparison in the thesis uses one reconstruction throughout, so the reported
+differences are internally consistent; this check bounds how far the absolute numbers
+could move under a different but equally valid reconstruction convention.
+
+## Not included
+
+- The `.npz` per-row drift arrays (163 MB). Re-derivable with `layer_drift.py`.
+- Model weights, adapters and merged checkpoints (hundreds of GB).
+- The document corpora, which are not redistributable.
+- Training and evaluation logs; the timing figures quoted in the thesis come from the
+  `timings.jsonl` records alongside them, and are shared-machine wall-clock.
+
+## Integrity
+
+`CHECKSUMS.txt` lists md5 for every file in this package. Verify with:
+
+```
+cd thesis_submission && md5sum -c CHECKSUMS.txt
+```

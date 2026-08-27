@@ -1,0 +1,48 @@
+{
+  "data_seed": 2,
+  "0.0": {
+    "quarterly_f1": 0.3244,
+    "quarterly_vf1": 0.5262,
+    "bank_f1": 0.0016,
+    "bank_vf1": 0.4228,
+    "alpha_beta": null,
+    "coeff": 0.0,
+    "eval_seconds": 3029.7
+  },
+  "0.25": {
+    "quarterly_f1": 0.3302,
+    "quarterly_vf1": 0.5463,
+    "bank_f1": 0.2725,
+    "bank_vf1": 0.68,
+    "alpha_beta": null,
+    "coeff": 0.25,
+    "eval_seconds": 2566.9
+  },
+  "0.5": {
+    "quarterly_f1": 0.2957,
+    "quarterly_vf1": 0.5149,
+    "bank_f1": 0.5933,
+    "bank_vf1": 0.8938,
+    "alpha_beta": null,
+    "coeff": 0.5,
+    "eval_seconds": 2031.2
+  },
+  "0.75": {
+    "quarterly_f1": 0.0635,
+    "quarterly_vf1": 0.3372,
+    "bank_f1": 0.7114,
+    "bank_vf1": 0.9167,
+    "alpha_beta": null,
+    "coeff": 0.75,
+    "eval_seconds": 4385.8
+  },
+  "1.0": {
+    "quarterly_f1": 0.0088,
+    "quarterly_vf1": 0.279,
+    "bank_f1": 0.6697,
+    "bank_vf1": 0.8722,
+    "alpha_beta": null,
+    "coeff": 1.0,
+    "eval_seconds": 4449.5
+  }
+}
