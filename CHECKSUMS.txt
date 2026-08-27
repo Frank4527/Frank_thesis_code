@@ -1,6 +1,6 @@
 # md5 of every file in this package.
 # Verify with:  cd thesis_submission && md5sum -c CHECKSUMS.txt
-1dd31adf097abefb0f912dff279dc66e  README.md
+9ef6e2f69fb59ead71bb59fd6e170042  README.md
 7f8f66693cde99889c772bd9ab2b103c  code/Identification_and_Reversion/dora_merge.py
 cf94a9b7a80bd479493d88d58d359480  code/Identification_and_Reversion/dora_reversion.py
 5e8d8e13a49078d4e5a7f8f323bcc9c7  code/Identification_and_Reversion/layer_drift.py
@@ -35,6 +35,16 @@ a85cd22e61384b2e9e7fcd8c2beb3c98  docs/PROVENANCE.md
 db0626ea63bfa0f4939ee1e5650a5fa8  docs/SECTION_TO_FILE.md
 65d7724502b5f3eeef3bb4d7d00da287  docs/SEEDS.md
 42a5f8c45215bd1c13af308331f1f0c5  docs/TESTS.md
+11209ab23613565738d245c9d9992b24  docs/WALKTHROUGH.md
+468a5538cfbeb79d197336c76f0349d7  figures/extract_mag_change.py
+c574200155f9735b7ce3b57d8d9606a3  figures/mag_dir_hist.py
+8a9ffc007f7771db89ce15b5e8ccad01  figures/make_degenerate_fig.py
+de6d91991612894b895faa03a9bbfe48  figures/make_drift_fig_thesis.py
+337b4780a5664c1cea192b9778115193  figures/make_es_frontier_paired.py
+d75c667828c4a39ab029df372ced782f  figures/make_es_paired.py
+77e7b43e9d822a79e1556b2ca9448c6b  figures/make_layer_arms_table.py
+10a7f2b81172c18e8df10f3ef45d3e54  figures/make_layer_frontier.py
+14dc05566187d60cea73349d1fbc76b0  figures/make_sweeps_fig_thesis.py
 cea4eca650d71bd9d552b4cf38e05702  results/early_stopping/Bankstatement2Quaterly_es_seed1/es_reversion/SELECTED_STEP.txt
 d5a2aef752603fb912f8d7517b6c67c0  results/early_stopping/Bankstatement2Quaterly_es_seed1/es_reversion/es-dir_only__both__val.json
 e14b6cc7494a0f64aba20d0e039a25d5  results/early_stopping/Bankstatement2Quaterly_es_seed1/es_reversion/es-dirsweep__both__val.json

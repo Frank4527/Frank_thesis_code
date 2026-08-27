@@ -17,6 +17,7 @@ thesis_submission/
 ├── code/                importable modules  (run with PYTHONPATH=code)
 ├── scripts/             the drivers, numbered in the order they were run
 ├── tests/               correctness checks (see docs/TESTS.md) -- 114 passing
+├── figures/             the scripts behind the thesis's data figures
 └── results/             every result file the thesis reports
 ```
 
@@ -34,6 +35,12 @@ B, we can revert either component toward its task-A value independently:
 
 Reverting the magnitude does essentially nothing; reverting the direction recovers
 most of the forgotten task. That is the central result.
+
+## Start here
+
+**`docs/WALKTHROUGH.md`** takes the study from the data through to the figures in
+nine stops, in the order the work happened. If you are reviewing this repository for
+the first time, read that instead of this list.
 
 ## Reading order
 
