@@ -1,13 +1,15 @@
 # md5 of every tracked file, excluding .git and figures/out
 cbbd587d9e6eee7b57a4946a89845e28  .gitignore
-5b044d6a256ad64a183be466d95c5047  README.md
+3ef3aecba7f842e8517474772fe468f0  README.md
 7f8f66693cde99889c772bd9ab2b103c  code/Identification_and_Reversion/dora_merge.py
 cf94a9b7a80bd479493d88d58d359480  code/Identification_and_Reversion/dora_reversion.py
+cf5599b083c53e519558dd78e867b97d  code/Identification_and_Reversion/generate_and_score.py
 5e8d8e13a49078d4e5a7f8f323bcc9c7  code/Identification_and_Reversion/layer_drift.py
 bc400db46eb78fe1f7e96c99d9f89310  code/Identification_and_Reversion/layer_select.py
 287f4907cff014b02e849ccd9c35bed7  code/Identification_and_Reversion/merge_adapter.py
 79d156d9c399494ea4ab7e0eab992bc1  code/Metrics/document_extraction.py
 3fdbc614fa009492744870785bb76c6e  code/Metrics/field_f1.py
+2c6bdbc3ce7656c5698944bf316f9b4f  code/Metrics/text_metrics.py
 cc253580c8274edd96749e6b67b1eb41  code/Pretrained_Ability/base_bank_only.py
 f96a52b9e3499acab44b3857fd181353  code/Pretrained_Ability/bench_lib.py
 399757b13c41165f2d8382c1ade7e90a  code/Pretrained_Ability/scoring_official.py
@@ -34,13 +36,14 @@ a26e3704e542b3344fc65ac7d7926976  code/Thesis_Experiment/pipeline/evalcore.py
 0ed9ef417842a84ad77bb0762aa577ad  code/Thesis_Experiment/pipeline/layer_sweep.py
 dc3850c85e2422bd0f4c7bfc94810e0e  code/Thesis_Experiment/pipeline/sweep.py
 468a5538cfbeb79d197336c76f0349d7  code/Thesis_Experiment/reporting/extract_mag_change.py
+ddb40438348e1256e8e4bdb47895b848  code/Training_Dora/qa_data.py
 34b9425ac0b744dc794a19468ca47b02  code/Training_Dora/train_dora_ddp.py
 7b01f4929690b25fa259d33e28e0a3f0  docs/DATA_PIPELINE.md
 c99c72baed73c7d9bbd5f31ee970cf6f  docs/EXPERIMENT_DESIGN.md
 1f6ee865e4d8d4940f4a65b2cf8f13f2  docs/NAMING.md
 32cbdf27353d4d9ad4268f639c6c7cf8  docs/PIPELINE_README.md
-c1adf037729b8b6427e9cfbce3505bdf  docs/PROVENANCE.md
-26fc55330c3529a8ed5b186584b48634  docs/SECTION_TO_FILE.md
+ebf3eb3defc0ffd63451ad588c87b210  docs/PROVENANCE.md
+b5d76eff77c95f9addb06331572c9d50  docs/SECTION_TO_FILE.md
 65d7724502b5f3eeef3bb4d7d00da287  docs/SEEDS.md
 42a5f8c45215bd1c13af308331f1f0c5  docs/TESTS.md
 11209ab23613565738d245c9d9992b24  docs/WALKTHROUGH.md
@@ -544,7 +547,7 @@ ba28940545ede1d786083bcbb51e7fec  scripts/41_pretrained_ability_splits23.sh
 3e4e4fa8a14806b289c1699ba8da09e1  scripts/42_pretrained_backbone_on_bank.sh
 a79385ca92fab86645fa6e17c55fed84  tests/test_bf16_dial1.py
 889a2e2a0cb152799683e30c357f98c4  tests/test_metric_rule_selection.py
-0e1e1a324d3b4c1645149e34a775fe6d  tests/test_reversion_math.py
+dfb91f201614987b82635983a7e15b1f  tests/test_reversion_math.py
 02ecef2db1f4e0170c507ca0b6b5d7f5  tests/verify_math.py
 db983a07605902400f13c9edba3ab0d3  tests/verify_metric.py
 11b0e1fd792863e3a3e4796f116ddf34  tests/verify_mixture.py
