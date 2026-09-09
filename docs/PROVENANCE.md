@@ -113,7 +113,7 @@ different names (`sweeps.png`, `layer_frontier.png`) and no longer matched what 
 thesis prints; the scripts behind the current figures were not on the host. The
 present scripts were written against the stored results, and each was checked by
 confirming the coordinates it plots equal the corresponding table in the thesis:
-Table 5.2 for Figures 5.1, 5.2 and 5.4, Tables 5.7 and 5.8 for Figure 5.5, Table 5.9
+Table 5.2 for Figures 5.1, 5.2 and 5.4, Tables 5.8 and 5.9 for Figure 5.5, Table 5.11
 for Figures 5.6 and 5.7, and the per-run medians for Figure 5.3.
 
 `results/layer_drift/drift_hist.npz` is derived, not copied: the per-unit arrays in

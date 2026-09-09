@@ -14,7 +14,7 @@ appendix does not carry.
 | §4.7.2 The six sequential runs | `run_all.sh`, `config.sh` | `scripts/11_run_all_b2q.sh`, `scripts/13_run_all_q2b.sh`, `scripts/10_config_b2q_example.sh` |
 | §4.4 Datasets | `datasets.py` | `code/Thesis_Experiment/datasets.py` |
 | §4.7.6 Dial selection | `select_dials.py` | `code/Thesis_Experiment/data_prep/select_dials.py` |
-| §4.5 Metrics | `field_f1.py`, `document_extraction.py` | `code/Metrics/field_f1.py`, `code/Metrics/document_extraction.py` |
+| §4.5 Evaluation Metrics | `field_f1.py`, `document_extraction.py` | `code/Metrics/field_f1.py`, `code/Metrics/document_extraction.py` |
 | §5.3 Experiment 2 | `es_rule.py` | `code/Thesis_Experiment/pipeline/es_rule.py` |
 | §5.6 Numerical sensitivity in bf16 | `evalcore.py` | `code/Thesis_Experiment/pipeline/evalcore.py` |
 

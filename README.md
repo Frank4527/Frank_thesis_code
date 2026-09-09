@@ -6,7 +6,9 @@ Reverting Catastrophic Forgetting in DoRA* (UCL Data Science and Machine Learnin
 Everything the thesis reports is here: the code that produced each result, the result
 files themselves, and scripts that redraw every data figure from those files. The
 tables in the next section are the index — find a chapter, table or figure in the
-thesis and they tell you which file backs it.
+thesis and they tell you which file backs it. Section 4.11 of the thesis describes
+this repository, and its Table 4.6 gives the same mapping the other way round, from
+each part of the report to the code and the results directory behind it.
 
 The two document corpora are client data held under a data agreement and are **not**
 in this repository, nor are the trained adapters (17.5 GB merged). Everything that can
@@ -45,10 +47,11 @@ then quarterly, splits 1–3) and `Quaterly_rep2Bankstatement_rerun{,_seed2,_see
 | 5.3 | selected α★, β★ | `primary/<run>/DIAL_SELECTION.txt` |
 | 5.4 | selected c★ (WiSE-FT) | `primary/<run>/stage2/wiseft-sweep__both__val_rerun.json` |
 | 5.5, 5.6 | the nine configurations on test | `primary/<run>/{stage1,stage2,baselines}/*__test_rerun.json` |
-| 5.7 | the checkpoint the rule returns | `early_stopping/<run>/es_reversion/` |
-| 5.8 | the first three checkpoints | `early_stopping/<run>/es_traj/step{10,20,30}__{old,new}__val.json` |
-| 5.9 | the four arms at β = 0 | `layer_reversion/<run>/layer-{top,random0,bottom}-dirsweep__both__val.json` |
+| 5.7 | the degenerate selection on b2q split 2 | `primary/Bankstatement2Quaterly_rep_rerun_seed2/stage2/stage2-dirsweep__both__val_rerun.json` |
+| 5.8 | the checkpoint the rule returns | `early_stopping/<run>/es_reversion/SELECTED_STEP.txt`, `es_traj/` |
+| 5.9 | the first three checkpoints | `early_stopping/<run>/es_traj/step{10,20,30}__{old,new}__val.json` |
 | 5.10 | per-layer drift profile | `layer_drift/layer_drift_<run>.json` |
+| 5.11 | the four arms at β = 0 | `layer_reversion/<run>/layer-{top,random0,bottom}-dirsweep__both__val.json`; the *all* column from `primary/<run>/stage2/stage2-dirsweep__both__val_rerun.json` |
 | 5.12 | the pretrained-anchor sweep | `pretrained_ability/split{1,2,3}/`, `backbone/` |
 | 5.13 | what the dial trades | computed from 5.12 |
 
