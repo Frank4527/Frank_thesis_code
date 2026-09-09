@@ -1,7 +1,8 @@
 """Correctness tests for the metric, the stopping rule, layer selection and the
 dataset registry -- run against the real modules on the server."""
-import sys, os, json, subprocess, tempfile
-sys.path.insert(0, "/home/frank/code")
+import os, sys, os, json, subprocess, tempfile
+_REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(_REPO, "code"))
 
 P = F = 0
 def chk(name, cond, detail=""):
@@ -39,8 +40,8 @@ chk("repeated values are matched with multiplicity, not set-deduped", 0.0 < vd <
 
 print()
 print("=" * 74); print("2. EARLY-STOPPING RULE  (pipeline/es_rule.py)"); print("=" * 74)
-RULE = "/home/frank/code/Thesis_Experiment/pipeline/es_rule.py"
-PY = "/home/frank/python-env/.venv/bin/python"
+RULE = os.path.join(_REPO, "code/Thesis_Experiment/pipeline/es_rule.py")
+PY = sys.executable
 
 def run_rule(scores, patience=3):
     """scores: {step: value} -> (selected_step, triggered)"""
@@ -73,7 +74,7 @@ chk("patience is honoured (2 fires earlier than 3)", (s, t) == (20, True), f"{s}
 
 print()
 print("=" * 74); print("3. LAYER SELECTION  (layer_select.py)"); print("=" * 74)
-SEL = "/home/frank/code/Identification_and_Reversion/layer_select.py"
+SEL = os.path.join(_REPO, "code/Identification_and_Reversion/layer_select.py")
 out = {}
 for mode in ("top", "bottom", "random"):
     o = f"/tmp/_sel_{mode}.json"
@@ -81,7 +82,7 @@ for mode in ("top", "bottom", "random"):
                     "--mode", mode, "--stat", "rho_median", "--out", o],
                    capture_output=True, text=True)
     out[mode] = json.load(open(o))
-drift = json.load(open("/home/frank/runs/thesis_experiment_runs/_layerdrift/layer_drift_b2q_seed1.json"))
+drift = json.load(open(os.path.join(_REPO, "results/layer_drift/layer_drift_b2q_seed1.json")))
 rho = {l["layer"]: l["rho_median"] for l in drift["layers"]}
 
 chk("every arm selects the same count (63 of 252)",
@@ -102,8 +103,9 @@ chk("random selection is reproducible for a fixed seed",
 
 print()
 print("=" * 74); print("4. DATASET REGISTRY GUARD  (Thesis_Experiment/datasets.py)"); print("=" * 74)
-code = ("import sys; sys.path.insert(0,'/home/frank/code');"
-        "from Thesis_Experiment.datasets import data_seed; print(data_seed())")
+code = ("import sys; sys.path.insert(0, %r); "
+        "from Thesis_Experiment.datasets import data_seed; print(data_seed())"
+        % os.path.join(_REPO, "code"))
 env = dict(os.environ); env.pop("DATA_SEED", None)
 r = subprocess.run([PY, "-c", code], capture_output=True, text=True, env=env)
 chk("an unset DATA_SEED raises rather than defaulting to split 1",

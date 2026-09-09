@@ -20,7 +20,14 @@ layers with information from experiments the choice is then tested on.
 import argparse, json, os
 import numpy as np
 
-DRIFT = "/home/frank/runs/thesis_experiment_runs/_layerdrift"
+# Where the per-layer drift statistics live. The first is the path used on the
+# experiment machine; the second is where they sit in this repository, so the
+# script also runs from a clone. $LAYER_DRIFT_DIR overrides both.
+_CANDIDATES = [os.environ.get("LAYER_DRIFT_DIR"),
+               "/home/frank/runs/thesis_experiment_runs/_layerdrift",
+               os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(
+                   os.path.abspath(__file__)))), "results", "layer_drift")]
+DRIFT = next((d for d in _CANDIDATES if d and os.path.isdir(d)), _CANDIDATES[1])
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--run", required=True, help="e.g. b2q_seed3 (a key of _layerdrift/)")

@@ -3,8 +3,9 @@
 These test mathematical invariants and decision logic, not just that files are
 unchanged. Anything that fails here would be a real defect in a reported number.
 """
-import sys, math, json, itertools
-sys.path.insert(0, "/home/frank/code")
+import os, sys, math, json, itertools
+_REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(_REPO, "code"))
 import torch
 
 from Identification_and_Reversion.dora_reversion import (

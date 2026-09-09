@@ -5,8 +5,9 @@ rounding granularity, so both routes rounded to the SAME bf16 value and the test
 'failed'. The real effect is a small FRACTION of weights straddling a rounding
 boundary, which only shows at realistic scale.
 """
-import sys
-sys.path.insert(0, "/home/frank/code")
+import os, sys
+_REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(_REPO, "code"))
 import torch
 from Identification_and_Reversion.dora_reversion import (
     column_norm, DoRALayer, build_version, revert_direction)
