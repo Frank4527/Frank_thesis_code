@@ -1,0 +1,32 @@
+{
+ "b2q_seed1": {
+  "n_units": 1400832,
+  "mag_median_pct": 0.11158490180969238,
+  "dir_median_pct": 0.6018761396408081
+ },
+ "b2q_seed2": {
+  "n_units": 1400832,
+  "mag_median_pct": 0.11201733350753784,
+  "dir_median_pct": 0.6338056325912476
+ },
+ "b2q_seed3": {
+  "n_units": 1400832,
+  "mag_median_pct": 0.1093449741601944,
+  "dir_median_pct": 0.6346050500869751
+ },
+ "q2b_seed1": {
+  "n_units": 1400832,
+  "mag_median_pct": 0.11041185259819031,
+  "dir_median_pct": 0.6903817653656006
+ },
+ "q2b_seed2": {
+  "n_units": 1400832,
+  "mag_median_pct": 0.10984518378973007,
+  "dir_median_pct": 0.6980724334716797
+ },
+ "q2b_seed3": {
+  "n_units": 1400832,
+  "mag_median_pct": 0.10959438979625702,
+  "dir_median_pct": 0.7060418128967285
+ }
+}

@@ -1,0 +1,14 @@
+{
+  "dial": "b0.25",
+  "spec": [
+    1.0,
+    0.25
+  ],
+  "benchmark": "DocVQA-val",
+  "metric": "ANLS (official)",
+  "adapter": "/home/frank/runs/thesis_experiment_runs/Bankstatement2Quaterly_rep_rerun_seed2/adapters/stage1/bank_full_8b_seed0/adapter_last",
+  "anls": 0.9290619352814031,
+  "exact_match": 0.864,
+  "n": 500,
+  "seconds": 265.4
+}

@@ -78,3 +78,53 @@ could move under a different but equally valid reconstruction convention.
 ```
 cd thesis_submission && md5sum -c CHECKSUMS.txt
 ```
+
+---
+
+## Added 2026-09-09: Experiment 4, and the figure scripts
+
+The package first assembled on 2026-08-27 predated Experiment 4 and carried figure
+scripts that no longer matched the figures in the thesis. Both were brought up to
+date from the same GPU host; nothing there was moved, renamed or deleted.
+
+### Experiment 4 (pretrained-ability recovery)
+
+| here | copied from `/home/frank/` |
+|---|---|
+| `code/Pretrained_Ability/*.py` | `code/Pretrained_Ability/` |
+| `results/pretrained_ability/split1/` | `runs/thesis_experiment_runs/_pretrained_ability_recovery/results/` |
+| `results/pretrained_ability/split2/`, `split3/` | the matching `_seed2`, `_seed3` directories |
+| `results/pretrained_ability/backbone/step0_base*.json` | `_pretrain_reversion/step0_base.json`, and `step0_base_{mmbench,ocrbench,summary}.json` from the split-1 results directory |
+| `results/pretrained_ability/backbone/base_bank_split{1,2,3}.json` | `_pa_base_bank/seed{1,2,3}/dial_base_bank.json` |
+| `scripts/40–42` | `_pretrained_ability_recovery/scripts/run_sweep.sh`, `_pa_seeds23_chain.sh`, `_pa_base_bank_chain.sh` |
+
+All 45 cells of Table 5.12 were checked against these files after copying, and the
+backbone row against `backbone/`.
+
+OCRBench and CORD results are included for split 1 because they came from the same
+sweep, but neither is reported in the thesis: the OCRBench axis was cut, and CORD
+belongs to a study that was dropped.
+
+### Figures
+
+`figures/` now holds one script per data figure in the thesis and nothing else. The
+scripts that were here before produced earlier versions of these figures under
+different names (`sweeps.png`, `layer_frontier.png`) and no longer matched what the
+thesis prints; the scripts behind the current figures were not on the host. The
+present scripts were written against the stored results, and each was checked by
+confirming the coordinates it plots equal the corresponding table in the thesis:
+Table 5.2 for Figures 5.1, 5.2 and 5.4, Tables 5.7 and 5.8 for Figure 5.5, Table 5.9
+for Figures 5.6 and 5.7, and the per-run medians for Figure 5.3.
+
+`results/layer_drift/drift_hist.npz` is derived, not copied: the per-unit arrays in
+`_layerdrift/layer_drift_*.npz` are about 34 MB per run and cannot be shipped, so
+`figures/derive_drift_hist.py` reduces them to the bin counts Figure 5.3 needs.
+
+### Dial-selection logs
+
+`results/primary/*/DIAL_SELECTION.txt` were regenerated from the stored sweeps with
+`code/Thesis_Experiment/data_prep/select_dials.py`. The copy of the split-1
+bank-then-quarterly log taken in August still showed the pre-fix dial-1 endpoint
+(0.0241/0.4559) alongside post-fix values elsewhere in the same file. The selected
+dials were unaffected; regenerating removes the inconsistency. The rule reproduces
+Tables 5.3 and 5.4 for all six runs.

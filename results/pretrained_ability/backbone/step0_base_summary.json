@@ -1,0 +1,19 @@
+{
+  "stage": "step0_base",
+  "base": "/home/frank/models/Qwen3-VL-8B-Instruct",
+  "device": "cuda:0",
+  "limit": null,
+  "batch": 4,
+  "max_pixels": 1048576,
+  "ocrbench": {
+    "score": 725,
+    "n": 1000,
+    "accuracy": 0.725
+  },
+  "mmbench": {
+    "accuracy": 0.8879648879648879,
+    "n": 4329,
+    "parse_fail_rate": 0.004389004389004389
+  },
+  "total_seconds": 1128.7
+}

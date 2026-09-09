@@ -1,0 +1,12 @@
+{
+  "dial": "base",
+  "spec": null,
+  "dataset": "bank_full",
+  "split": "validation",
+  "data_seed": 1,
+  "adapter": "/home/frank/runs/thesis_experiment_runs/Bankstatement2Quaterly_rep_rerun/adapters/stage1/bank_full_8b_seed0/adapter_last",
+  "field_f1": 0.0025,
+  "value_f1": 0.4811,
+  "n": 74,
+  "seconds": 2167.1
+}

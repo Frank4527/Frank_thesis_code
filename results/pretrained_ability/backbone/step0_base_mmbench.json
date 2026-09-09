@@ -1,0 +1,52 @@
+{
+  "stage": "step0_base",
+  "benchmark": "MMBench-dev-EN",
+  "base": "/home/frank/models/Qwen3-VL-8B-Instruct",
+  "max_pixels": 1048576,
+  "accuracy": 0.8879648879648879,
+  "correct": 3844,
+  "n": 4329,
+  "parse_fail_rate": 0.004389004389004389,
+  "parse_fail_n": 19,
+  "refusal_n": 0,
+  "extraction_route": {
+    "option": 4031,
+    "text": 279,
+    "unparsed": 19
+  },
+  "eval_mode": "vanilla (single pass, not circular)",
+  "per_ability": {
+    "attribute_reasoning": {
+      "acc": 0.9084406294706724,
+      "n": 699,
+      "parse_fail": 0.008583690987124463
+    },
+    "coarse_perception": {
+      "acc": 0.9107303877366997,
+      "n": 1109,
+      "parse_fail": 0.0
+    },
+    "finegrained_perception (cross-instance)": {
+      "acc": 0.8442776735459663,
+      "n": 533,
+      "parse_fail": 0.01125703564727955
+    },
+    "finegrained_perception (instance-level)": {
+      "acc": 0.9045092838196287,
+      "n": 1131,
+      "parse_fail": 0.0
+    },
+    "logic_reasoning": {
+      "acc": 0.8009708737864077,
+      "n": 412,
+      "parse_fail": 0.01699029126213592
+    },
+    "relation_reasoning": {
+      "acc": 0.8898876404494382,
+      "n": 445,
+      "parse_fail": 0.0
+    }
+  },
+  "seconds": 650.0,
+  "force_letter_prompt": false
+}

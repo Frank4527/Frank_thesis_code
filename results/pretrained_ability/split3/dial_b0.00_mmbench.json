@@ -1,0 +1,56 @@
+{
+  "dial": "b0.00",
+  "spec": [
+    1.0,
+    0.0
+  ],
+  "benchmark": "MMBench-dev-EN",
+  "adapter": "/home/frank/runs/thesis_experiment_runs/Bankstatement2Quaterly_rep_rerun_seed3/adapters/stage1/bank_full_8b_seed0/adapter_last",
+  "max_pixels": 1048576,
+  "accuracy": 0.8875028875028875,
+  "correct": 3842,
+  "n": 4329,
+  "parse_fail_rate": 0.003927003927003927,
+  "parse_fail_n": 17,
+  "refusal_n": 0,
+  "extraction_route": {
+    "option": 4051,
+    "text": 261,
+    "unparsed": 17
+  },
+  "eval_mode": "vanilla (single pass, not circular)",
+  "per_ability": {
+    "attribute_reasoning": {
+      "acc": 0.9084406294706724,
+      "n": 699,
+      "parse_fail": 0.00715307582260372
+    },
+    "coarse_perception": {
+      "acc": 0.90892696122633,
+      "n": 1109,
+      "parse_fail": 0.0
+    },
+    "finegrained_perception (cross-instance)": {
+      "acc": 0.8442776735459663,
+      "n": 533,
+      "parse_fail": 0.01125703564727955
+    },
+    "finegrained_perception (instance-level)": {
+      "acc": 0.905393457117595,
+      "n": 1131,
+      "parse_fail": 0.0
+    },
+    "logic_reasoning": {
+      "acc": 0.8009708737864077,
+      "n": 412,
+      "parse_fail": 0.014563106796116505
+    },
+    "relation_reasoning": {
+      "acc": 0.8876404494382022,
+      "n": 445,
+      "parse_fail": 0.0
+    }
+  },
+  "seconds": 681.8,
+  "force_letter_prompt": false
+}

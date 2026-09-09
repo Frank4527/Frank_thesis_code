@@ -1,0 +1,17 @@
+{
+  "stage": "step0_base",
+  "base": "/home/frank/models/Qwen3-VL-8B-Instruct",
+  "docvqa": {
+    "anls": 0.9338377671150747,
+    "exact_match": 0.864,
+    "n": 500,
+    "seconds": 245.2,
+    "sec_per_sample": 0.49
+  },
+  "bank_val": {
+    "field_f1": 0.0025,
+    "value_f1": 0.4811,
+    "n": 74
+  },
+  "bank_seconds": 2216.0
+}

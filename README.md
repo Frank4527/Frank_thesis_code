@@ -1,104 +1,96 @@
-# Where Does Forgetting Live? — code and results
+# Where Does Forgetting Live? — code, results and figures
 
-Submission package for the MSc thesis *Where Does Forgetting Live? Localising and
-Reverting Catastrophic Forgetting in DoRA* (UCL, in partnership with Evolution AI).
+Companion repository for the MSc thesis *Where Does Forgetting Live? Localising and
+Reverting Catastrophic Forgetting in DoRA* (UCL Data Science and Machine Learning).
 
-Everything here is a **byte-identical copy** of the code that produced the results and
-of the result files themselves; `CHECKSUMS.txt` records both. Nothing was renamed
-inside `code/`, because the modules import each other by package path and renaming
-them would break every import — the tidying is in the top-level layout and in
-`scripts/`, which nothing imports.
+Everything the thesis reports is here: the code that produced each result, the result
+files themselves, and scripts that redraw every data figure from those files. The
+tables in the next section are the index — find a chapter, table or figure in the
+thesis and they tell you which file backs it.
+
+The two document corpora are client data held under a data agreement and are **not**
+in this repository, nor are the trained adapters (17.5 GB merged). Everything that can
+be released is released.
 
 ```
-thesis_submission/
-├── README.md            you are here
-├── CHECKSUMS.txt        md5 of every file in this package
-├── docs/                design, data pipeline, split definitions, naming, provenance
-├── code/                importable modules  (run with PYTHONPATH=code)
-├── scripts/             the drivers, numbered in the order they were run
-├── tests/               correctness checks (see docs/TESTS.md) -- 114 passing
-├── figures/             the scripts behind the thesis's data figures
-└── results/             every result file the thesis reports
+README.md          you are here
+CHECKSUMS.txt      md5 of every tracked file
+docs/              design notes, data pipeline, split definitions, naming, provenance
+code/              importable modules            (run with PYTHONPATH=code)
+scripts/           the drivers, numbered in the order they were run
+figures/           one script per data figure, reading only from results/
+results/           every result file the thesis reports
+tests/             correctness checks (docs/TESTS.md)
 ```
 
-## The 60-second version
+## The four experiments
 
-The thesis asks where catastrophic forgetting is stored inside a DoRA-adapted
-vision-language document extractor. DoRA writes each weight as a per-output-row
-**magnitude** times a unit **direction**, `W = m · D`. After training task A then task
-B, we can revert either component toward its task-A value independently:
+| thesis | experiment | code | driver | results |
+|---|---|---|---|---|
+| §4.7, §5.2 | **1. Sequential adaptation** — the six runs, the two sweeps, the selected dials, the four baselines | `Identification_and_Reversion/dora_reversion.py`, `dora_merge.py`, `Thesis_Experiment/pipeline/sweep.py`, `data_prep/select_dials.py` | `scripts/11–14` | `results/primary/<run>/` |
+| §4.8, §5.3 | **2. Reversion against early stopping** — retrain with checkpoints, patience-3 rule, sweep the early-stopped adapter | `Thesis_Experiment/pipeline/es_rule.py` | `scripts/20–22` | `results/early_stopping/<run>/` |
+| §4.9, §5.4 | **3. Partial-layer reversion** — per-layer drift, three 63-layer arms | `Identification_and_Reversion/layer_drift.py`, `layer_select.py`, `Thesis_Experiment/pipeline/layer_sweep.py` | `scripts/30–32` | `results/layer_reversion/<run>/`, `results/layer_drift/` |
+| §4.10, §5.5 | **4. Recovering pretrained ability** — the same operator against the pretrained backbone | `Pretrained_Ability/sweep.py`, `sweep_seed.py`, `step0_bench.py`, `base_bank_only.py` | `scripts/40–42` | `results/pretrained_ability/` |
 
-| operation | file |
-|---|---|
-| `revert_magnitude(α)` → `((1−α)m₀ + αm_ft)·D_ft` | `code/Identification_and_Reversion/dora_reversion.py` |
-| `revert_direction(β)` → `m_ft · normalise((1−β)D₀ + βD_ft)` | same file |
+`<run>` is one of the six: `Bankstatement2Quaterly_rep_rerun{,_seed2,_seed3}` (bank
+then quarterly, splits 1–3) and `Quaterly_rep2Bankstatement_rerun{,_seed2,_seed3}`
+(quarterly then bank).
 
-Reverting the magnitude does essentially nothing; reverting the direction recovers
-most of the forgotten task. That is the central result.
+## Where each table comes from
 
-## Start here
+| table | what it holds | file |
+|---|---|---|
+| 5.1 | forgetting on test | `primary/<run>/stage1/*__both__test_rerun.json`, `stage2/stage2__both__test_rerun.json` |
+| 5.2 | both sweeps, all six runs | `primary/<run>/stage2/stage2-{dir,mag}sweep__both__val_rerun.json` |
+| 5.3 | selected α★, β★ | `primary/<run>/DIAL_SELECTION.txt` |
+| 5.4 | selected c★ (WiSE-FT) | `primary/<run>/stage2/wiseft-sweep__both__val_rerun.json` |
+| 5.5, 5.6 | the nine configurations on test | `primary/<run>/{stage1,stage2,baselines}/*__test_rerun.json` |
+| 5.7 | the checkpoint the rule returns | `early_stopping/<run>/es_reversion/` |
+| 5.8 | the first three checkpoints | `early_stopping/<run>/es_traj/step{10,20,30}__{old,new}__val.json` |
+| 5.9 | the four arms at β = 0 | `layer_reversion/<run>/layer-{top,random0,bottom}-dirsweep__both__val.json` |
+| 5.10 | per-layer drift profile | `layer_drift/layer_drift_<run>.json` |
+| 5.12 | the pretrained-anchor sweep | `pretrained_ability/split{1,2,3}/`, `backbone/` |
+| 5.13 | what the dial trades | computed from 5.12 |
 
-**`docs/WALKTHROUGH.md`** takes the study from the data through to the figures in
-nine stops, in the order the work happened. If you are reviewing this repository for
-the first time, read that instead of this list.
+## Redrawing the figures
 
-## Reading order
+```
+PYTHONPATH=code python figures/make_all.py     # writes figures/out/
+```
 
-1. `docs/EXPERIMENT_DESIGN.md` — the design, the baselines, the limitations
-2. `code/Identification_and_Reversion/dora_reversion.py` — the method, ~80 lines
-3. `code/Identification_and_Reversion/dora_merge.py` — how it is applied to a live model
-4. `docs/DATA_PIPELINE.md` + `docs/SEEDS.md` — the corpora and the three re-splits
-5. `scripts/` in numerical order — what was actually run
-6. `results/` — the JSON the tables are built from
+Each script reads only from `results/`, prints every coordinate it plots so a figure
+can be checked against its table, and covers one thesis figure:
 
-## What is in `code/`
+| figure | script | reads |
+|---|---|---|
+| 5.1 the two sweeps, per run | `fig5_1_sweeps_grid.py` | `primary/` |
+| 5.2 the sweeps in the two-task plane | `fig5_2_sweeps_pareto.py` | `primary/` |
+| 5.3 how far each component moves | `fig5_3_magdir_hist.py` | `layer_drift/drift_hist.npz` |
+| 5.4 the selected coefficients ringed | `fig5_4_sweeps_grid_sel.py` | `primary/` |
+| 5.5 training path against reversion | `fig5_5_es_paired.py` | `early_stopping/`, `primary/` |
+| 5.6, 5.7 layer arms, and zoomed | `fig5_6_layer_pareto.py` | `layer_reversion/`, `primary/` |
 
-| path | role |
-|---|---|
-| `Identification_and_Reversion/dora_reversion.py` | **the method**: `decompose`, `revert_magnitude`, `revert_direction` |
-| `Identification_and_Reversion/dora_merge.py` | `DoRAAdapter`, the four diagnostic versions, `apply_selective` |
-| `Identification_and_Reversion/merge_adapter.py` | merges the stage-1 adapter into a base model |
-| `Identification_and_Reversion/layer_drift.py` | per-layer, per-row direction drift ρ |
-| `Identification_and_Reversion/layer_select.py` | picks layers to revert (top / bottom / random) |
-| `Training_Dora/train_dora_ddp.py` | DoRA fine-tuning, 4×GPU DDP; used for every trained model |
-| `Metrics/field_f1.py` | field-level F1 (Donut-style), value-F1, nTED |
-| `Metrics/document_extraction.py` | generation + scoring loop |
-| `Thesis_Experiment/datasets.py` | dataset registry; resolves `DATA_SEED` to manifests |
-| `Thesis_Experiment/pipeline/evalcore.py` | model loading, reversion dispatch, scoring |
-| `Thesis_Experiment/pipeline/eval_pair.py` | one configuration → one result JSON |
-| `Thesis_Experiment/pipeline/sweep.py` | dial one component across α/β |
-| `Thesis_Experiment/pipeline/layer_sweep.py` | the same, restricted to selected layers |
-| `Thesis_Experiment/pipeline/es_rule.py` | the patience-3 early-stopping rule |
-| `Thesis_Experiment/data_prep/` | split construction, verification, seed-isolation audit, dial selection |
+Figures 2.1–2.3 are schematics with no data behind them and have no script.
 
-Two implementation details worth knowing before reading the code:
+Figure 5.3 is drawn from binned counts rather than the raw arrays: `layer_drift.py`
+writes one value per adapted output unit (1,400,832 per run, ~34 MB each), which is
+too large to ship. `figures/derive_drift_hist.py` reduces those arrays to the bin
+counts and medians in `results/layer_drift/drift_hist.npz`, from which the figure is
+identical.
 
-- **`evalcore.apply_reversion` dispatches dial 1 to the canonical full-DoRA path.**
-  `revert_direction(1.0)` renormalises an already-unit vector; in fp32 that is a
-  no-op, but it survives the cast to bf16 as ~2e-4 of weight noise — enough to change
-  a greedily decoded token. The dispatch keeps every sweep's β=1 endpoint identical to
-  the untouched stage-2 model. See the comment at the top of that function.
-- **`merge_adapter.py` sits under `sequential/` in the working tree.** That directory
-  is otherwise superseded, but this one file is live and is called by `run_all.sh`.
-  It is filed here under `Identification_and_Reversion/` where it belongs.
+## Reproducing the numbers without a GPU
 
-## What is in `results/`
+The selection rule can be re-run against the stored sweeps, which reproduces Tables
+5.3 and 5.4 exactly:
 
-| directory | contents |
-|---|---|
-| `primary/<run>/` | the six main runs: stage-1, stage-2, the three reversions, WiSE-FT, the three sweeps, joint, rehearsal 1%/5%, and that run's `DIAL_SELECTION.txt` |
-| `early_stopping/<run>/` | `es_traj/` (a checkpoint every 10 steps) and `es_reversion/` (the sweep applied to the early-stopped model, plus `SELECTED_STEP.txt`) |
-| `layer_reversion/<run>/` | the three arms — top-25%, random-25%, bottom-25% — with the selected layer lists |
-| `layer_drift/` | per-layer drift summaries, one JSON per run |
+```
+ln -s "$PWD/results/primary/<run>" /tmp/r/results
+PYTHONPATH=code python code/Thesis_Experiment/data_prep/select_dials.py /tmp/r
+```
 
-The `.npz` per-row drift arrays (163 MB) are **not** included: they are a
-re-derivable intermediate, and `layer_drift.py` regenerates them from the adapters.
+Everything else in Chapter 5 is a direct read of the JSON files listed above.
 
-See `docs/NAMING.md` for how to read a result filename.
+## Section-to-file map
 
-## Reproducing
-
-Requires 4×A100, the Qwen3-VL-8B-Instruct weights, and the document corpora — none of
-which are redistributable. With those in place, run `scripts/` in numerical order with
-`PYTHONPATH=code`. `docs/PROVENANCE.md` records which script produced which result
-directory.
+`docs/SECTION_TO_FILE.md` maps each part of the thesis to the file implementing it,
+matching Appendix A of the thesis.

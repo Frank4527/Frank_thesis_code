@@ -1,0 +1,95 @@
+{
+  "dial": "b0.50",
+  "spec": [
+    1.0,
+    0.5
+  ],
+  "benchmark": "OCRBench",
+  "adapter": "/home/frank/runs/thesis_experiment_runs/Bankstatement2Quaterly_rep_rerun/adapters/stage1/bank_full_8b_seed0/adapter_last",
+  "data_seed": 1,
+  "max_pixels": 1048576,
+  "score": 724,
+  "n": 1000,
+  "accuracy": 0.724,
+  "empty_output_rate": 0.0,
+  "components": {
+    "Text Recognition": {
+      "score": 256,
+      "max": 300,
+      "n_seen": 300
+    },
+    "Scene Text-centric VQA": {
+      "score": 159,
+      "max": 200,
+      "n_seen": 200
+    },
+    "Doc-oriented VQA": {
+      "score": 84,
+      "max": 200,
+      "n_seen": 200
+    },
+    "Key Information Extraction": {
+      "score": 169,
+      "max": 200,
+      "n_seen": 200
+    },
+    "Handwritten Mathematical Expression Recognition": {
+      "score": 56,
+      "max": 100,
+      "n_seen": 100
+    }
+  },
+  "per_type": {
+    "Artistic Text Recognition": {
+      "correct": 49,
+      "n": 50,
+      "acc": 0.98
+    },
+    "Digit String Recognition": {
+      "correct": 36,
+      "n": 50,
+      "acc": 0.72
+    },
+    "Doc-oriented VQA": {
+      "correct": 84,
+      "n": 200,
+      "acc": 0.42
+    },
+    "Handwriting Recognition": {
+      "correct": 43,
+      "n": 50,
+      "acc": 0.86
+    },
+    "Handwritten Mathematical Expression Recognition": {
+      "correct": 56,
+      "n": 100,
+      "acc": 0.56
+    },
+    "Irregular Text Recognition": {
+      "correct": 47,
+      "n": 50,
+      "acc": 0.94
+    },
+    "Key Information Extraction": {
+      "correct": 169,
+      "n": 200,
+      "acc": 0.845
+    },
+    "Non-Semantic Text Recognition": {
+      "correct": 32,
+      "n": 50,
+      "acc": 0.64
+    },
+    "Regular Text Recognition": {
+      "correct": 49,
+      "n": 50,
+      "acc": 0.98
+    },
+    "Scene Text-centric VQA": {
+      "correct": 159,
+      "n": 200,
+      "acc": 0.795
+    }
+  },
+  "seconds": 381.3
+}

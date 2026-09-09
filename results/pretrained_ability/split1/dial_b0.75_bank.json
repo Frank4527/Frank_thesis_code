@@ -1,0 +1,13 @@
+{
+  "dial": "b0.75",
+  "spec": [
+    1.0,
+    0.75
+  ],
+  "dataset": "bank_full",
+  "split": "validation",
+  "data_seed": 1,
+  "field_f1": 0.6695,
+  "value_f1": 0.8959,
+  "n": 74
+}
